@@ -1,0 +1,29 @@
+﻿生成启动时间为 2019/3/29 11:26:19。
+     1>项目“D:\software\dev\P111129__VMDSPlugins\trunk\develop\ExtDemo\ExtDemo.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“.\Debug10\ExtDemo.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         d:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\include /I..\..\..\..\02__Common\trunk\develop\include /I..\..\..\..\P111126__libdml\trunk\develop\include /I..\..\..\..\P111127__libflow\trunk\develop\include /ZI /nologo /W3 /WX- /Od /Oy- /D _DEBUG /D WIN32 /D _WINDOWS /D _USRDLL /D _BUILD_PLUGIN_ /D _VC80_UPGRADE=0x0600 /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /GR /Yc"stdafx.h" /Fp".\Debug10\ExtDemo.pch" /Fo".\Debug10\\" /Fd".\Debug10\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt StdAfx.cpp
+         StdAfx.cpp
+         d:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\include /I..\..\..\..\02__Common\trunk\develop\include /I..\..\..\..\P111126__libdml\trunk\develop\include /I..\..\..\..\P111127__libflow\trunk\develop\include /ZI /nologo /W3 /WX- /Od /Oy- /D _DEBUG /D WIN32 /D _WINDOWS /D _USRDLL /D _BUILD_PLUGIN_ /D _VC80_UPGRADE=0x0600 /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /GR /Yu"stdafx.h" /Fp".\Debug10\ExtDemo.pch" /Fo".\Debug10\\" /Fd".\Debug10\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ExtDemo.cpp
+         ExtDemo.cpp
+       ManifestResourceCompile:
+         所有输出均为最新。
+       Link:
+         d:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\..\..\debug10\ExtDemo.dpe" /INCREMENTAL /NOLOGO /LIBPATH:..\lib10 /LIBPATH:..\..\..\..\03__libbase\trunk\develop\lib10 /LIBPATH:..\..\..\..\P111126__libdml\trunk\develop\lib10 /LIBPATH:..\..\..\..\P111127__libflow\trunk\develop\lib10 /LIBPATH:..\..\..\..\02__Common\trunk\develop\lib10 /LIBPATH:..\..\..\..\02__Common\trunk\develop\lib10\NDAM kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:".\Debug10\ExtDemo.dpe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\software\dev\debug10\ExtDemo.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\..\..\debug10\ExtDemo.lib" /MACHINE:X86 /DLL .\Debug10\ExtDemo.dpe.embed.manifest.res
+         .\Debug10\ExtDemo.obj
+         .\Debug10\StdAfx.obj
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:".\Debug10\ExtDemo.dpe.embed.manifest" /manifest .\Debug10\ExtDemo.dpe.intermediate.manifest
+         所有输出均为最新。
+       LinkEmbedManifest:
+         所有输出均为最新。
+         ExtDemo.vcxproj -> D:\software\dev\P111129__VMDSPlugins\trunk\develop\ExtDemo\..\..\..\..\debug10\ExtDemo.dpe
+       FinalizeBuildStatus:
+         正在删除文件“.\Debug10\ExtDemo.unsuccessfulbuild”。
+         正在对“.\Debug10\ExtDemo.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“D:\software\dev\P111129__VMDSPlugins\trunk\develop\ExtDemo\ExtDemo.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:09.91

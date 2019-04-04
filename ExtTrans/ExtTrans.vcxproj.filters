@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="ExtTrans.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="TaskBase.cpp" />
+    <ClCompile Include="LogTask.cpp" />
+    <ClCompile Include="fcs16.cpp" />
+    <ClCompile Include="comserver.cpp" />
+    <ClCompile Include="irdaclient.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="LogTask.h" />
+    <ClInclude Include="comserver.h" />
+    <ClInclude Include="irdaclient.h" />
+    <ClInclude Include="TaskBase.h" />
+    <ClInclude Include="fcs16.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+</Project>

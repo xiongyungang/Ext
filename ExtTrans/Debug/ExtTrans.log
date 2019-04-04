@@ -1,0 +1,88 @@
+﻿生成启动时间为 2019/4/3 8:12:25。
+     1>项目“D:\software\dev\P111129__VMDSPlugins\trunk\develop\ExtTrans\ExtTrans.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>_PrepareForClean:
+         正在删除文件“Debug\ExtTrans.lastbuildstate”。
+       InitializeBuildStatus:
+         正在创建“Debug\ExtTrans.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         d:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\..\02__Common\trunk\develop\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _USRDLL /D EXTNET_EXPORTS /D _BUILD_PLUGIN_ /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt comserver.cpp ExtTrans.cpp fcs16.cpp irdaclient.cpp LogTask.cpp stdafx.cpp TaskBase.cpp
+         TaskBase.cpp
+         stdafx.cpp
+         LogTask.cpp
+     1>d:\software\dev\p111129__vmdsplugins\trunk\develop\exttrans\logtask.cpp(72): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : 参见“strcpy”的声明
+     1>d:\software\dev\p111129__vmdsplugins\trunk\develop\exttrans\logtask.cpp(78): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : 参见“strcpy”的声明
+     1>d:\software\dev\p111129__vmdsplugins\trunk\develop\exttrans\logtask.cpp(81): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\software\dev\p111129__vmdsplugins\trunk\develop\exttrans\logtask.cpp(105): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : 参见“strcpy”的声明
+     1>d:\software\dev\p111129__vmdsplugins\trunk\develop\exttrans\logtask.cpp(108): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : 参见“strcpy”的声明
+     1>d:\software\dev\p111129__vmdsplugins\trunk\develop\exttrans\logtask.cpp(112): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : 参见“strcpy”的声明
+     1>d:\software\dev\p111129__vmdsplugins\trunk\develop\exttrans\logtask.cpp(120): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : 参见“sprintf”的声明
+         irdaclient.cpp
+         fcs16.cpp
+         ExtTrans.cpp
+         comserver.cpp
+     1>d:\software\dev\p111129__vmdsplugins\trunk\develop\exttrans\comserver.cpp(57): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(188) : 参见“strncpy”的声明
+     1>d:\software\dev\p111129__vmdsplugins\trunk\develop\exttrans\comserver.cpp(58): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(188) : 参见“strncpy”的声明
+     1>d:\software\dev\p111129__vmdsplugins\trunk\develop\exttrans\comserver.cpp(360): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : 参见“sprintf”的声明
+         正在生成代码...
+       Link:
+         d:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\..\..\debug10\ExtTrans.dpe" /NOLOGO /LIBPATH:..\..\..\..\02__Common\trunk\develop\lib10 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\ExtTrans.dpe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\software\dev\debug10\ExtTrans.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\..\..\debug10\ExtTrans.lib" /MACHINE:X86 /DLL Debug\comserver.obj
+         Debug\ExtTrans.obj
+         Debug\fcs16.obj
+         Debug\irdaclient.obj
+         Debug\LogTask.obj
+         Debug\stdafx.obj
+         Debug\TaskBase.obj
+            正在创建库 ..\..\..\..\debug10\ExtTrans.lib 和对象 ..\..\..\..\debug10\ExtTrans.exp
+     1>libScriptD.lib(GenericThread.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“libScriptD.lib(GenericThread.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libScriptD.lib(VariantEx.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“libScriptD.lib(VariantEx.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(inetLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(inetLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(ltxmlLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(ltxmlLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(memLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(memLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(BindStatusCallback.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(BindStatusCallback.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(mscomctlLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(mscomctlLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(mscomLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(mscomLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(mscryptLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(mscryptLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(msgdiLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(msgdiLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(msguiLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(msguiLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(msregLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(msregLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(msuuid.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(msuuid.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(msverLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(msverLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(ts_err.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(ts_err.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(algolLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(algolLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(base64Lib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(base64Lib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(codeLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(codeLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(fileLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(fileLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(libSGML.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(libSGML.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(linkLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(linkLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(opensslX.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(opensslX.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(regexLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(regexLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(sockLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(sockLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(strLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(strLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(threadLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(threadLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(timeLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(timeLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(utilLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(utilLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(uuidLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(uuidLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(xmlLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(xmlLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibD.lib(zextLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibD.lib(zextLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>regexD.lib(regex.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“regexD.lib(regex.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+         ExtTrans.vcxproj -> D:\software\dev\P111129__VMDSPlugins\trunk\develop\ExtTrans\..\..\..\..\debug10\ExtTrans.dpe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"..\..\..\..\debug10\ExtTrans.dpe;#2" /manifest Debug\ExtTrans.dpe.intermediate.manifest
+       FinalizeBuildStatus:
+         正在删除文件“Debug\ExtTrans.unsuccessfulbuild”。
+         正在对“Debug\ExtTrans.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“D:\software\dev\P111129__VMDSPlugins\trunk\develop\ExtTrans\ExtTrans.vcxproj”(rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:16.06

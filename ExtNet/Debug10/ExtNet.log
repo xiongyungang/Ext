@@ -1,0 +1,53 @@
+﻿生成启动时间为 2019/4/4 9:41:36。
+     1>项目“D:\software\dev\P111129__VMDSPlugins\trunk\develop\ExtNet\ExtNet.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>_PrepareForClean:
+         正在删除文件“.\Debug10\ExtNet.lastbuildstate”。
+       InitializeBuildStatus:
+         正在对“.\Debug10\ExtNet.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         d:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\include /I..\..\..\..\02__Common\trunk\develop\include /I..\..\..\..\P111126__libdml\trunk\develop\include /I..\..\..\..\P111127__libflow\trunk\develop\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D EXTNET_EXPORTS /D _BUILD_PLUGIN_ /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp".\Debug10\ExtNet.pch" /Fo".\Debug10\\" /Fd".\Debug10\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         d:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\include /I..\..\..\..\02__Common\trunk\develop\include /I..\..\..\..\P111126__libdml\trunk\develop\include /I..\..\..\..\P111127__libflow\trunk\develop\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D EXTNET_EXPORTS /D _BUILD_PLUGIN_ /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp".\Debug10\ExtNet.pch" /Fo".\Debug10\\" /Fd".\Debug10\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ExtNet.cpp WebSocket.cpp
+         WebSocket.cpp
+     1>d:\software\dev\p111129__vmdsplugins\trunk\develop\extnet\libwebsockets.h(4732): warning C4273: “_snprintf”: dll 链接不一致
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(363) : 参见“_snprintf”的前一个定义
+     1>d:\software\dev\p111129__vmdsplugins\trunk\develop\extnet\websocket.cpp(235): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(188) : 参见“strncpy”的声明
+     1>d:\software\dev\p111129__vmdsplugins\trunk\develop\extnet\websocket.cpp(250): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(188) : 参见“strncpy”的声明
+     1>d:\software\dev\p111129__vmdsplugins\trunk\develop\extnet\websocket.cpp(416): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(188) : 参见“strncpy”的声明
+     1>d:\software\dev\p111129__vmdsplugins\trunk\develop\extnet\websocket.cpp(420): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(188) : 参见“strncpy”的声明
+     1>d:\software\dev\p111129__vmdsplugins\trunk\develop\extnet\websocket.cpp(424): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(188) : 参见“strncpy”的声明
+         ExtNet.cpp
+     1>d:\software\dev\p111129__vmdsplugins\trunk\develop\extnet\libwebsockets.h(4732): warning C4273: “_snprintf”: dll 链接不一致
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(363) : 参见“_snprintf”的前一个定义
+         正在生成代码...
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo".\Debug10\ExtNet.dpe.embed.manifest.res" .\Debug10\ExtNet_manifest.rc 
+       Link:
+         d:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\..\..\debug10\ExtNet.dpe" /INCREMENTAL /NOLOGO /LIBPATH:..\lib10 /LIBPATH:..\..\..\..\03__libbase\trunk\develop\lib10 /LIBPATH:..\..\..\..\05__misc\trunk\develop\lib10 /LIBPATH:..\..\..\..\P111126__libdml\trunk\develop\lib10 /LIBPATH:..\..\..\..\P111127__libflow\trunk\develop\lib10 /LIBPATH:..\..\..\..\02__Common\trunk\develop\lib10 /LIBPATH:..\..\..\..\02__Common\trunk\develop\lib10\NDAM kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:".\Debug10\ExtNet.dpe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\software\dev\debug10\ExtNet.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\..\..\debug10\ExtNet.lib" /MACHINE:X86 /DLL .\Debug10\ExtNet.dpe.embed.manifest.res
+         .\Debug10\ExtNet.obj
+         .\Debug10\stdafx.obj
+         .\Debug10\WebSocket.obj
+            正在创建库 ..\..\..\..\debug10\ExtNet.lib 和对象 ..\..\..\..\debug10\ExtNet.exp
+     1>ExtNet.obj : error LNK2019: 无法解析的外部符号 "public: void __thiscall CHttpClient::SetDebug(bool)" (?SetDebug@CHttpClient@@QAEX_N@Z)，该符号在函数 "protected: long __thiscall CNetPlugin::httpOpen(void)" (?httpOpen@CNetPlugin@@IAEJXZ) 中被引用
+     1>ExtNet.obj : error LNK2019: 无法解析的外部符号 "public: __thiscall CHttpClient::CHttpClient(void)" (??0CHttpClient@@QAE@XZ)，该符号在函数 "protected: long __thiscall CNetPlugin::httpOpen(void)" (?httpOpen@CNetPlugin@@IAEJXZ) 中被引用
+     1>ExtNet.obj : error LNK2019: 无法解析的外部符号 "public: __thiscall CHttpClient::~CHttpClient(void)" (??1CHttpClient@@QAE@XZ)，该符号在函数 "public: void * __thiscall CHttpClient::`scalar deleting destructor'(unsigned int)" (??_GCHttpClient@@QAEPAXI@Z) 中被引用
+     1>ExtNet.obj : error LNK2019: 无法解析的外部符号 "public: int __thiscall CHttpClient::Get(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)" (?Get@CHttpClient@@QAEHPBDAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)，该符号在函数 "protected: int __thiscall CNetPlugin::httpGet(long,char const *)" (?httpGet@CNetPlugin@@IAEHJPBD@Z) 中被引用
+     1>ExtNet.obj : error LNK2019: 无法解析的外部符号 "public: int __thiscall CHttpClient::Gets(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,char const *)" (?Gets@CHttpClient@@QAEHPBDAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z)，该符号在函数 "protected: int __thiscall CNetPlugin::httpGet(long,char const *)" (?httpGet@CNetPlugin@@IAEHJPBD@Z) 中被引用
+     1>ExtNet.obj : error LNK2019: 无法解析的外部符号 "public: int __thiscall CHttpClient::Post(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)" (?Post@CHttpClient@@QAEHPBDABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAV23@@Z)，该符号在函数 "protected: int __thiscall CNetPlugin::httpPost(long,char const *,char const *)" (?httpPost@CNetPlugin@@IAEHJPBD0@Z) 中被引用
+     1>ExtNet.obj : error LNK2019: 无法解析的外部符号 "public: int __thiscall CHttpClient::Posts(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,char const *)" (?Posts@CHttpClient@@QAEHPBDABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAV23@0@Z)，该符号在函数 "protected: int __thiscall CNetPlugin::httpPost(long,char const *,char const *)" (?httpPost@CNetPlugin@@IAEHJPBD0@Z) 中被引用
+     1>ExtNet.obj : error LNK2019: 无法解析的外部符号 "public: int __thiscall CHttpClient::Donwload(char const *,char const *,void (__cdecl*)(void *,int),void *)" (?Donwload@CHttpClient@@QAEHPBD0P6AXPAXH@Z1@Z)，该符号在函数 "protected: int __thiscall CNetPlugin::httpDownLoad(long,char const *,char const *)" (?httpDownLoad@CNetPlugin@@IAEHJPBD0@Z) 中被引用
+     1>ExtNet.obj : error LNK2019: 无法解析的外部符号 "public: int __thiscall CHttpClient::Donwloads(char const *,char const *,void (__cdecl*)(void *,int),void *,char const *)" (?Donwloads@CHttpClient@@QAEHPBD0P6AXPAXH@Z10@Z)，该符号在函数 "protected: int __thiscall CNetPlugin::httpDownLoad(long,char const *,char const *)" (?httpDownLoad@CNetPlugin@@IAEHJPBD0@Z) 中被引用
+     1>ExtNet.obj : error LNK2019: 无法解析的外部符号 "public: int __thiscall CHttpClient::Upload(char const *,char const *,char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,char const *,unsigned int,void (__cdecl*)(void *,int),void *)" (?Upload@CHttpClient@@QAEHPBD00AAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0IP6AXPAXH@Z2@Z)，该符号在函数 "protected: int __thiscall CNetPlugin::httpUpLoad(long,char const *,char const *,char const *,char const *)" (?httpUpLoad@CNetPlugin@@IAEHJPBD000@Z) 中被引用
+     1>ExtNet.obj : error LNK2019: 无法解析的外部符号 "public: int __thiscall CHttpClient::Uploads(char const *,char const *,char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,char const *,unsigned int,void (__cdecl*)(void *,int),void *,char const *)" (?Uploads@CHttpClient@@QAEHPBD00AAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0IP6AXPAXH@Z20@Z)，该符号在函数 "protected: int __thiscall CNetPlugin::httpUpLoad(long,char const *,char const *,char const *,char const *)" (?httpUpLoad@CNetPlugin@@IAEHJPBD000@Z) 中被引用
+     1>ExtNet.obj : error LNK2019: 无法解析的外部符号 "public: void __thiscall CHttpClient::SetConnectTimeOut(int)" (?SetConnectTimeOut@CHttpClient@@QAEXH@Z)，该符号在函数 "protected: void __thiscall CNetPlugin::httpSetConnectTimeOut(long,int)" (?httpSetConnectTimeOut@CNetPlugin@@IAEXJH@Z) 中被引用
+     1>..\..\..\..\debug10\ExtNet.dpe : fatal error LNK1120: 12 个无法解析的外部命令
+     1>已完成生成项目“D:\software\dev\P111129__VMDSPlugins\trunk\develop\ExtNet\ExtNet.vcxproj”(rebuild 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:09.24

@@ -1,0 +1,93 @@
+websocket接口
+
+HANDLE wsOpen(VOID)
+	创建websocket实例,返回实例句柄
+
+VOID wsClose(HANDLE id)
+	关闭websocket实例
+
+RETCODE wsConnect(HANDLE id, STRING sUrl)
+	连接websocket服务器，sUrl格式"ws://127.0.0.1:7681"
+
+RETCODE wsWrite(HANDLE id, STRING sVar)
+	发送数据
+
+STRING wsRead(HANDLE id)
+	接收数据
+
+
+http/https接口
+
+HANDLE httpOpen(VOID)
+	创建http实例,返回实例句柄
+
+VOID httpClose(HANDLE id)
+	关闭http实例
+
+RETCODE httpGet(HANDLE id, STRING sUrl)
+	发送GET请求，返回结果通过httpGetResponse获取
+
+RETCODE httpPost(HANDLE id, STRING sUrl, STRING sPostData)
+	发送POST请求，返回结果通过httpGetResponse获取
+
+STRING httpGetResponse(HANDLE id)
+	获取GET/POST请求返回结果
+
+STRING httpDownLoad(HANDLE id, STRING sUrl, STRING sLocalPath)
+	下载文件
+
+RETCODE httpUpLoad(HANDLE id, STRING sUrl,STRING sFilePath,STRING sFromName,!STRING sPostData)
+	上传文件
+
+
+local STATOK = "200"
+local retcode
+
+print("httptest 180510004")
+
+--创建websocket实例 
+local ws = engine.wsOpen()
+--连接websocket
+engine.wsConnect(ws,"ws://127.0.0.1:7681")
+
+local slen = engine.wsWrite(ws,"{\"TaskID\":\"123456\",\"Action\":\"insert\"}")
+local strJson1 = engine.wsRead(ws)
+--关闭websocket实例 
+engine.wsClose(ws)
+
+--创建httpclient实例 
+local hp = engine.httpOpen()
+--发送http Get请求
+retcode= engine.httpGet(hp, "http://124.115.230.42:7194/auth/auth?appKey=TOKEN-2018-0B7B3E4EB0")
+if (retcode == 200) then
+	local strJson = engine.httpGetResponse(hp)
+        --解析返回json
+        --日志输出
+	engine.println(string.format("strJson %s",strJson))
+end
+
+--发送http Post请求
+local postData = "diagnosticUnitID=28003E001147363530373636&diagnosticUnitIP=172.16.2.21&diagnosticUnitType=EOL&deviceName13020851&VIN=LZGJL3Z41JX015093&serviceName=UploadCarFaultLog&controllers=[{\"controllerNo\":\"BCM\",\"code\":\"U012345,U012345,U012345,U012345\"},{\"controllerNo\":\"VCU\",\"code\":\"U012345,U012345,U012345,U012345\"}]&userid=diagnosticServiceUser&password=SQDKEOL@sxqc.com"
+retcode= engine.httpPost(hp, "https://172.16.8.160:8090/Thingworx/Things/ConnectionThing/Services/SQService?Accept=Application/json", postData)
+if (retcode == 200) then
+	local strJson = engine.httpGetResponse(hp)
+        --解析返回json
+        --日志输出
+	engine.println(string.format("strJson %s",strJson))
+end
+
+--http 下载文件
+retcode= engine.httpDownLoad(hp, "https://www.python.org/ftp/python/2.7.14/python-2.7.14.msi","E:\\")
+if (retcode == 200) then
+--此处不调用httpGetResponse
+end
+
+--http 上传文件 没有额外数据要提交   “fileUpload”是上传文件服务端文件上传方法定义没有要求一般填“file”
+retcode= engine.httpUpLoad(hp, "https://www.example.com/upload.cgi","E:\\111.txt","fileUpload")
+--有额外数据要提交
+--retcode= engine.httpUpLoad(hp, "https://www.example.com/upload.cgi","E:\\111.txt","fileUpload","userid=user&password=123456")
+if (retcode == 200) then
+	httpGetResponse
+end
+
+engine.httpClose(hp)

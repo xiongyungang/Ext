@@ -1,0 +1,35 @@
+STRING httpGet(STRING url)
+
+VOID serialAppend(STRING serial)
+
+STRING PartType
+
+STRING PartName
+
+STRING PartDesc
+
+RETCODE loadRules(STRING partno)
+
+VOID executeRules(VOID)
+
+RETCODE executeRule(STRING sRule,STRING sVal,VARIANT vVal)
+
+NUMBER executeOffset(STRING rule,NUMBER value)
+
+VOID resultClear(BOOLEAN bRedraw)
+
+BOOLEAN resultFindProc(STRING sProc)
+
+BOOLEAN resultFindRule(STRING sRule)
+
+VOID resultRemoveProc(STRING sProc)
+
+BOOLEAN resultIsOK(STRING sRule)
+
+STRING resultGetRuleLower(STRING sRule)
+
+STRING resultGetRuleUpper(STRING sRule)
+
+VOID resultFieldUpdateValue(STRING sRule,STRING sValue)
+
+VOID resultSave(VOID)
