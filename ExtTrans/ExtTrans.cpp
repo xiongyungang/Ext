@@ -1,8 +1,7 @@
 #include "stdafx.h"
 #include <libFlow.h>
-#include "LogTask.h"
+//#include "LogTask.h"
 #include "comserver.h"
-
 #include "irdaclient.h"
 
 
@@ -21,12 +20,12 @@ protected:
     GM_DECLARE_METHOD(CTransPlugin,transEnd);
 
 protected:
-    LogTask *m_pLogTask;
+    //LogTask *m_pLogTask;
     ComServer *m_pComServer;                      
     IrdaClient *m_pIrdaClient;
 
 protected:
-    void transStart(LPCTSTR comName,int Loglevel);
+    void transStart(LPCTSTR comName);
     void transEnd();
 
 };
@@ -91,7 +90,7 @@ LPCTSTR CTransPlugin::GetName(void)
 void CTransPlugin::OnEngineStart(CFlowEngine* pEngine)
 {
     CFlowPlugin::OnEngineStart(pEngine);
-    GM_REGISTER_METHOD(pEngine,this,transStart,"TI",NULL);//参数comName和LogLevel
+    GM_REGISTER_METHOD(pEngine,this,transStart,"T",NULL);//参数com name
     GM_REGISTER_METHOD(pEngine,this,transEnd,NULL,NULL);
 }
 
@@ -102,10 +101,9 @@ void CTransPlugin::showGlobalDelay(void)
 }
 
 GM_METHOD_LD_BEGIN(CTransPlugin,transStart)
-    DEBUG_BREAK_IF(2 != numIn);
+    DEBUG_BREAK_IF(1 != numIn);
     DEBUG_BREAK_IF(!GV_IS_BSTR(pIn[0]));
-    DEBUG_BREAK_IF(!GV_IS_I4(pIn[1]));
-    pGmc->transStart(pIn[0].strVal,pIn[1].lVal);
+    pGmc->transStart(pIn[0].strVal);
 GM_METHOD_LD_END()
 
 GM_METHOD_LD_BEGIN(CTransPlugin,transEnd)
@@ -114,20 +112,16 @@ GM_METHOD_LD_BEGIN(CTransPlugin,transEnd)
     pGmc->transEnd();
 GM_METHOD_LD_END()
 
-void CTransPlugin::transStart(LPCSTR strCom,int Loglevel)
+void CTransPlugin::transStart(LPCSTR strCom)
 {
     char comName[64] = {0};
-    strncpy(comName,strCom,64);
+    strncpy(comName,strCom,64);      
     if(strcmp(comName,"")==0 || atoi(comName+3) == 0)
     {
-        printf("Error in COM name or log level \n");
+        logMessage0(LOGLEVEL_DEBUG,_T("Error in COM name \n"));
         return;
     }
-
-    m_pLogTask = LogTask::GetInstance();
-    m_pLogTask->SetLogLevel(Loglevel);
-    m_pLogTask->start();
-    LogTask::LOG_PRINT(LEVEL_INFOR,"IrdatoCom %s", PRVERSION);
+    logMessage1(LOGLEVEL_DEBUG,_T("IrdatoCom %s \n"), PRVERSION);
     m_pComServer = ComServer::GetInstance();
     m_pComServer->SetCom(comName);
     m_pComServer->start();
@@ -136,20 +130,19 @@ void CTransPlugin::transStart(LPCSTR strCom,int Loglevel)
 }
 
 void CTransPlugin::transEnd()
-{
-    if (m_pIrdaClient != NULL)
+{ 
+    if (m_pIrdaClient != NULL && m_pComServer != NULL)
     {
         m_pIrdaClient->stop();
-    }
-    
-    if (m_pComServer != NULL)
-    {
-        m_pComServer->stop();
-    }
 
-    if (m_pLogTask != NULL)
-    {
-        m_pLogTask->stop();
-    }
-       
+        m_pComServer->stop();
+
+        m_pIrdaClient->RemoveInstance();
+
+        m_pComServer->RemoveInstance();
+
+        m_pComServer = NULL;
+
+        m_pIrdaClient = NULL;
+    } 
 }

@@ -1,0 +1,56 @@
+﻿生成启动时间为 2019/4/9 14:25:32。
+     1>项目“D:\software\dev\P111129__VMDSPlugins\trunk\develop\ExtSeedKey\ExtSeedKey.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Release\ExtSeedKey.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         d:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\..\02__Common\trunk\develop\include /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /D EXTNET_EXPORTS /D _BUILD_PLUGIN_ /D _WINDLL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ExtSeedKey.cpp stdafx.cpp
+         ExtSeedKey.cpp
+         stdafx.cpp
+         正在生成代码...
+       Link:
+         d:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\..\..\debug10\ExtSeedKey.dpe" /NOLOGO /LIBPATH:..\..\..\..\02__Common\trunk\develop\lib10 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\ExtSeedKey.dpe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\software\dev\debug10\ExtSeedKey.pdb" /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\..\..\debug10\ExtSeedKey.lib" /MACHINE:X86 /DLL Release\ExtSeedKey.obj
+         Release\stdafx.obj
+            正在创建库 ..\..\..\..\debug10\ExtSeedKey.lib 和对象 ..\..\..\..\debug10\ExtSeedKey.exp
+     1>libScriptR.lib(GenericThread.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“libScriptR.lib(GenericThread.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libScriptR.lib(VariantEx.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“libScriptR.lib(VariantEx.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(inetLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(inetLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(ltxmlLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(ltxmlLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(memLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(memLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(BindStatusCallback.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(BindStatusCallback.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(mscomctlLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(mscomctlLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(mscomLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(mscomLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(mscryptLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(mscryptLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(msgdiLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(msgdiLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(msguiLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(msguiLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(msregLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(msregLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(msuuid.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(msuuid.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(msverLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(msverLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(ts_err.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(ts_err.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(algolLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(algolLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(base64Lib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(base64Lib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(codeLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(codeLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(fileLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(fileLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(libSGML.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(libSGML.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(linkLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(linkLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(opensslX.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(opensslX.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(regexLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(regexLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(sockLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(sockLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(strLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(strLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(threadLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(threadLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(timeLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(timeLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(utilLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(utilLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(uuidLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(uuidLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(xmlLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(xmlLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>baseLibR.lib(zextLib.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“baseLibR.lib(zextLib.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>regexR.lib(regex.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“regexR.lib(regex.obj)”或在“D:\software\dev\debug10\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+         ExtSeedKey.vcxproj -> D:\software\dev\P111129__VMDSPlugins\trunk\develop\ExtSeedKey\..\..\..\..\debug10\ExtSeedKey.dpe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"..\..\..\..\debug10\ExtSeedKey.dpe;#2" /manifest Release\ExtSeedKey.dpe.intermediate.manifest
+       FinalizeBuildStatus:
+         正在删除文件“Release\ExtSeedKey.unsuccessfulbuild”。
+         正在对“Release\ExtSeedKey.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“D:\software\dev\P111129__VMDSPlugins\trunk\develop\ExtSeedKey\ExtSeedKey.vcxproj”(rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:07.60

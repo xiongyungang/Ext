@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include <stdio.h>
 #include "TaskBase.h"
+#include <baseLib/logLib.h>
 
 TaskBase::TaskBase()
 {
@@ -9,7 +10,7 @@ TaskBase::TaskBase()
 
 TaskBase::~TaskBase()
 {
-
+    
 }
 
 void TaskBase::start()
@@ -18,7 +19,7 @@ void TaskBase::start()
 				m_handle = CreateThread(NULL, 0, run, this, 0, NULL);
 				if ( m_handle == NULL)
 				{
-								printf("TaskBase::start CreateThread error:%d\n", GetLastError());
+        logMessage1(LOGLEVEL_DEBUG,_T("TaskBase::start CreateThread error:%d\n"), GetLastError());
 				}
 }
 

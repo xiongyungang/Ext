@@ -6,7 +6,8 @@
 #include "irdaclient.h"
 #include "comserver.h"
 #include "fcs16.h"
-#include "LogTask.h"
+#include <baseLib/logLib.h>
+
 
 
 #pragma comment(lib, "ws2_32.lib")
@@ -30,6 +31,7 @@ void IrdaClient::RemoveInstance()
     if (m_IClient != NULL)
     {
         delete m_IClient;
+        m_IClient = NULL;
     }
 }
 
@@ -38,10 +40,11 @@ IrdaClient::IrdaClient()
     //ClientInit();
     //printf("ClientInit end\n");
     m_endEvent = CreateEvent(NULL,FALSE,FALSE,NULL);//线程结束事件
+ 
 }
 
 IrdaClient::~IrdaClient()
-{
+{  
     WSACleanup();
     join();
 }
@@ -53,14 +56,14 @@ int IrdaClient::ClientInit()
     WORD wVersionRequested;  
     int err;  
     m_sock = INVALID_SOCKET;
-    m_IsConnect = false;
+    m_IsConnect = false; 
     wVersionRequested = MAKEWORD( 2, 2 );   // 请求1.1版本的WinSock库  
 
     //初始化winSock
     err = WSAStartup( wVersionRequested, &m_wsaData );  
     if ( err != 0 ) 
-    {  
-        LogTask::LOG_PRINT(LEVEL_ERROR,"WSAStartup err %d",err);
+    {
+        logMessage1(LOGLEVEL_ERROR,_T("WSAStartup err %d. \n"), err);
         return -1;          // 返回值为零的时候是表示成功申请WSAStartup  
     }  
 
@@ -69,7 +72,7 @@ int IrdaClient::ClientInit()
         // 检查这个低字节是不是1，高字节是不是1以确定是否我们所请求的1.1版本  
         // 否则的话，调用WSACleanup()清除信息，结束函数  
         WSACleanup( );
-        LogTask::LOG_PRINT(LEVEL_ERROR,"IrdaClient::ClientInit() WSAStartup wVersion err");
+        logMessage0(LOGLEVEL_ERROR,_T("IrdaClient::ClientInit() WSAStartup wVersion err \n"));
         return -1;   
     }
 
@@ -84,8 +87,8 @@ int IrdaClient::ClientStart()
     char* pRecvBuf = new char[BUF_SIZE];
     //char* pSendBuf = new char[BUF_SIZE];
 
-    while (WAIT_OBJECT_0 != WaitForSingleObject(m_endEvent,0))
-    {
+    while (WAIT_OBJECT_0 != WaitForSingleObject(m_endEvent, 0))
+    {                        
         if (!m_IsConnect)
         {
             Connect();
@@ -95,7 +98,7 @@ int IrdaClient::ClientStart()
         {
             int rsize = 0;
             memset(pRecvBuf, 0, BUF_SIZE);
-            LogTask::LOG_PRINT(LEVEL_DEBUG,"recv() before");
+            logMessage0(LOGLEVEL_DEBUG,_T("recv() before \n"));
             //rsize接受到的字节数
             rsize = recv(m_sock, pRecvBuf, BUF_SIZE,0);
             if (rsize <= 0)
@@ -103,13 +106,13 @@ int IrdaClient::ClientStart()
                 //另一端已关闭则返回0
                 if (rsize == 0)
                 {
-                    LogTask::LOG_PRINT(LEVEL_INFOR,"recv() client close");
+                    logMessage0(LOGLEVEL_INFO,_T("recv() client close \n"));
                     //Sleep(3000);
                 }
                 //失败返回-1
                 else
                 {
-                    LogTask::LOG_PRINT(LEVEL_ERROR,"recv() client err %d",WSAGetLastError());
+                    logMessage1(LOGLEVEL_ERROR,_T("recv() client err %d \n"), WSAGetLastError());
                 }
                 ComServer::GetInstance()->SetComDTR(false);
                 closesocket(m_sock);
@@ -117,8 +120,8 @@ int IrdaClient::ClientStart()
                 m_IsConnect = false;
                 continue;
             }
-            LogTask::LOG_PRINT(LEVEL_INFOR,"IrdaClient recv %d Bytes.",rsize);
-            LogTask::LOG_PRINT(LEVEL_DEBUG,"IrdaClient recv buf head: %02x %02x %02x %02x %02x %02x",(byte)pRecvBuf[0],
+            logMessage1(LOGLEVEL_INFO,_T("IrdaClient recv %d Bytes. \n"), rsize);
+            logMessage6(LOGLEVEL_DEBUG,_T("IrdaClient recv buf head: %02x %02x %02x %02x %02x %02x \n"), (byte)pRecvBuf[0],
                 (byte)pRecvBuf[1],(byte)pRecvBuf[2],(byte)pRecvBuf[3],(byte)pRecvBuf[4],(byte)pRecvBuf[5]);
             //for (int i = 0; i < rsize; i++)
             //{
@@ -174,7 +177,7 @@ int IrdaClient::SendData(char* buf, int sizes)
     int m = 0;
     if (!m_IsConnect)
     {
-        LogTask::LOG_PRINT(LEVEL_ERROR,"IrdaClient:SendData sock no connect.");
+        logMessage0(LOGLEVEL_ERROR,_T("IrdaClient:SendData sock no connect. \n"));
         //Connect();
         return -1;
     }
@@ -193,11 +196,11 @@ int IrdaClient::SendData(char* buf, int sizes)
     {
         if (m == 0)
         {
-            LogTask::LOG_PRINT(LEVEL_ERROR,"IrdaClient::SendData recv client close.");
+            logMessage0(LOGLEVEL_ERROR,_T("IrdaClient::SendData recv client close. \n"));
         }
         else
         {
-            LogTask::LOG_PRINT(LEVEL_ERROR,"IrdaClient::SendData send err.");
+            logMessage0(LOGLEVEL_ERROR,_T("IrdaClient::SendData send err. \n"));
         }
         closesocket(m_sock);
         m_sock = INVALID_SOCKET;
@@ -221,7 +224,7 @@ int IrdaClient::Connect()
     if ((m_sock = socket(AF_IRDA, SOCK_STREAM, 0)) == INVALID_SOCKET)
     {
         // call WSAGetLastError
-        LogTask::LOG_PRINT(LEVEL_ERROR,"IrdaClient:Connect socket err %d.",WSAGetLastError());
+        logMessage1(LOGLEVEL_ERROR,_T("IrdaClient:Connect socket err %d. \n"),WSAGetLastError());
         return -1;
     }
 
@@ -234,8 +237,8 @@ int IrdaClient::Connect()
     if (getsockopt(m_sock, SOL_IRLMP, IRLMP_ENUMDEVICES,
         (char *)pDevList, &DevListLen) == SOCKET_ERROR)
     {
-        // WSAGetLastError 
-        LogTask::LOG_PRINT(LEVEL_ERROR,"IrdaClient:Connect getsockopt() err %d.",WSAGetLastError());
+        // WSAGetLastError
+        logMessage1(LOGLEVEL_ERROR,_T("IrdaClient:Connect getsockopt() err %d. \n"), WSAGetLastError());
         closesocket(m_sock);
         m_sock = INVALID_SOCKET;
         return -1;
@@ -243,7 +246,7 @@ int IrdaClient::Connect()
 
     if (pDevList->numDevice > 0)
     {
-        LogTask::LOG_PRINT(LEVEL_DEBUG,"IrdaClient:Connect numDevice %d.",pDevList->numDevice);
+        logMessage1(LOGLEVEL_DEBUG,_T("IrdaClient:Connect numDevice %d. \n"), pDevList->numDevice);
         memcpy(&DestSockAddr.irdaDeviceID[0], &pDevList->Device[0].irdaDeviceID[0], 4);
         //setsockopt(m_sock,SOL_SOCKET,SO_RCVBUF,(const char*)&nRecvBuf,sizeof(int));
         //setsockopt(m_sock,SOL_SOCKET,SO_SNDBUF,(const char*)&nSendBuf,sizeof(int));
@@ -251,7 +254,7 @@ int IrdaClient::Connect()
             sizeof(SOCKADDR_IRDA)) == SOCKET_ERROR)
         {
             // WSAGetLastError
-            LogTask::LOG_PRINT(LEVEL_ERROR,"IrdaClient:Connect connect() err %d.",WSAGetLastError());
+            logMessage1(LOGLEVEL_ERROR,_T("IrdaClient:Connect connect() err %d. \n"), WSAGetLastError());
             closesocket(m_sock);
             m_sock = INVALID_SOCKET;
             return -1;

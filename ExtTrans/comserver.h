@@ -2,6 +2,8 @@
 #ifndef __COMSERVER_H__  
 #define __COMSERVER_H__ 
 #include "TaskBase.h"
+#include <string>
+using namespace std;
 
 class ComServer: public TaskBase
 {

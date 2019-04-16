@@ -2,6 +2,7 @@
 #ifndef __TASKBASE_H__  
 #define __TASKBASE_H__ 
 #include <windows.h>
+#include <baseLib/logLib.h>
 
 class TaskBase
 {

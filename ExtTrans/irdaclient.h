@@ -4,6 +4,8 @@
 #include "TaskBase.h"
 
 
+
+
 class IrdaClient : public TaskBase
 	{
 	public:

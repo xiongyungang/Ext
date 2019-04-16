@@ -3,7 +3,8 @@
 //#include <Winsock2.h>
 #include "irdaclient.h"
 #include "fcs16.h"
-#include "LogTask.h"
+
+
 
 #define BUF_SIZE 16384
 
@@ -26,12 +27,14 @@ void ComServer::RemoveInstance()
     if (m_CServer != NULL)
     {
         delete m_CServer;
+        m_CServer = NULL;
     }
 }
 
 ComServer::ComServer() : m_hComm(INVALID_HANDLE_VALUE)
 {
     m_isTerminate = true;
+
     m_endEvent = CreateEvent(NULL,FALSE,FALSE,NULL);//线程结束事件
 }
 
@@ -88,8 +91,8 @@ int ComServer::ComInit()
         0);  
     /** 如果打开失败，释放资源并返回 */  
     if (m_hComm == INVALID_HANDLE_VALUE)  
-    {  
-        LogTask::LOG_PRINT(LEVEL_ERROR,"ComServer::ComInit() CreateFile %s error %d.",m_ComName, GetLastError());
+    {
+        logMessage2(LOGLEVEL_ERROR,_T("ComServer::ComInit() CreateFile %s error %d. \n"),m_ComName, GetLastError());
         return -1;  
     }
     /** 设置串口的超时时间,均设为0,表示不使用超时限制 */ 
@@ -137,12 +140,12 @@ void ComServer::SendData(char* buf, int size)
     DWORD rsize = 0;
     if (m_isTerminate)
     {
-        LogTask::LOG_PRINT(LEVEL_ERROR,"ComServer::SendData() PPP isTerminated.");
+        logMessage0(LOGLEVEL_ERROR,_T("ComServer::SendData() PPP isTerminated. \n"));
         return;
     }
     if (m_hComm == INVALID_HANDLE_VALUE)
     {
-        LogTask::LOG_PRINT(LEVEL_ERROR,"ComServer::SendData() err m_hComm -1.");
+        logMessage0(LOGLEVEL_ERROR,_T("ComServer::SendData() err m_hComm -1. \n"));
         return;
     }
     //LogTask::LOG_PRINT(LEVEL_DEBUG,"ComServer::SendData() send Bytes %d.",size);
@@ -162,7 +165,8 @@ void ComServer::SendData(char* buf, int size)
         }	
         else
         {
-            LogTask::LOG_PRINT(LEVEL_ERROR,"ComServer::SendData() WriteFile err %d.", GetLastError());
+            logMessage1(LOGLEVEL_ERROR,_T("ComServer::SendData() WriteFile err %d. \n"), GetLastError());
+            
         }
     }
     //LogTask::LOG_PRINT(LEVEL_DEBUG,"ComServer::SendData() WriteFile success Bytes %d.", rsize);
@@ -178,9 +182,9 @@ void ComServer::svc()
     //设置串口通信事件，EV_RXCHAR：接收到一个字节并放入输入缓冲区
     if (!SetCommMask(m_hComm, EV_RXCHAR))
     {
-        LogTask::LOG_PRINT(LEVEL_ERROR,"ComServer::svc() SetCommMask error:%d.", GetLastError());
+        logMessage1(LOGLEVEL_ERROR,_T("ComServer::svc() SetCommMask error:%d. \n"), GetLastError());
     }
-    while (WAIT_OBJECT_0 != WaitForSingleObject(m_endEvent,0))
+    while (WAIT_OBJECT_0 != WaitForSingleObject(m_endEvent, 0))
     {
 
         int total = 0;
@@ -192,10 +196,10 @@ void ComServer::svc()
             //用来判断用SetCommMask()函数设置的串口通信事件是否已发生
             if (WaitCommEvent(m_hComm, &dwCommEvent, NULL) == false)
             {
-                LogTask::LOG_PRINT(LEVEL_ERROR,"ComServer::svc() WaitCommEvent error:%d.", GetLastError());
+                logMessage1(LOGLEVEL_ERROR,_T("ComServer::svc() WaitCommEvent error:%d. \n"), GetLastError());
                 break;
             }
-            LogTask::LOG_PRINT(LEVEL_DEBUG,"ComServer::svc() WaitCommEvent have event.");
+            logMessage0(LOGLEVEL_ERROR,_T("ComServer::svc() WaitCommEvent have event. \n"));
             //该数值返回读操作实际读入的字节数
             DWORD rsize = 0;
             //int r_len= 0;
@@ -214,17 +218,17 @@ void ComServer::svc()
                 }
                 else
                 {
-                    LogTask::LOG_PRINT(LEVEL_ERROR,"ComServer::svc() ReadFile err error:%d.", GetLastError());
+                    logMessage1(LOGLEVEL_ERROR,_T("ComServer::svc() ReadFile err error:%d. \n"), GetLastError());
                 }
                 //PurgeComm(m_hComm, PURGE_TXABORT|
                 //	PURGE_RXABORT|PURGE_TXCLEAR|PURGE_RXCLEAR);
             }
-            LogTask::LOG_PRINT(LEVEL_INFOR,"ComServer::svc() ReadFile Bytes %d.",rsize);
+            logMessage1(LOGLEVEL_ERROR,_T("ComServer::svc() ReadFile Bytes %d. \n"), rsize);
             //读取到数据
             if (rsize > 0)
             {
-                LogTask::LOG_PRINT(LEVEL_DEBUG,"ComServer ReadFile buf head: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x",(byte)pRecvBuf[0],
-                    (byte)pRecvBuf[1],(byte)pRecvBuf[2],(byte)pRecvBuf[3],(byte)pRecvBuf[4],(byte)pRecvBuf[5],(byte)pRecvBuf[6],(byte)pRecvBuf[7],(byte)pRecvBuf[8],(byte)pRecvBuf[9]);
+                logMessage10(LOGLEVEL_ERROR,_T("ComServer ReadFile buf head: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x \n"), (byte)pRecvBuf[0],
+                (byte)pRecvBuf[1],(byte)pRecvBuf[2],(byte)pRecvBuf[3],(byte)pRecvBuf[4],(byte)pRecvBuf[5],(byte)pRecvBuf[6],(byte)pRecvBuf[7],(byte)pRecvBuf[8],(byte)pRecvBuf[9]);
                 //char debuf[1024];
                 //memset(debuf, 0, 1024);
                 //for (int i = 0; i < rsize && i < 1023; i++)

@@ -4,14 +4,12 @@
     <ClCompile Include="ExtTrans.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="TaskBase.cpp" />
-    <ClCompile Include="LogTask.cpp" />
     <ClCompile Include="fcs16.cpp" />
     <ClCompile Include="comserver.cpp" />
     <ClCompile Include="irdaclient.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="LogTask.h" />
     <ClInclude Include="comserver.h" />
     <ClInclude Include="irdaclient.h" />
     <ClInclude Include="TaskBase.h" />

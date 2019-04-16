@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "LogTask.h"
 #include <sys\stat.h>
+#include <baseLib/logLib.h>
 
 #define LOGFILESIZE 50000000 //50M
 
@@ -44,8 +45,9 @@ LogTask& LogTask::operator=(const LogTask&)
 
 LogTask::~LogTask()
 {
+    //LOG_PRINT(LEVEL_ERROR,"============= LOG =========== \n");
 				DeleteCriticalSection(&m_section);
-				join();
+				//join(3);
 }
 
 //日志等级大于1，生成debuglog.txt
@@ -58,7 +60,7 @@ void LogTask::SetLogLevel(int level)
 								char filepath[MAX_PATH+1] = {0};
 								if (GetModuleFileName(NULL,filepath,MAX_PATH) == 0)
 								{
-												printf("LogTask GetModuleFileName err %d.\n",GetLastError());
+            logMessage1(LOGLEVEL_DEBUG,_T("LogTask GetModuleFileName err %d.\n"),GetLastError());
 								}
 								else
 								{
@@ -156,7 +158,7 @@ void LogTask::svc()
 												ResetEvent(m_event);
 								}
 								LeaveCriticalSection(&m_section);
-								printf("%s\n",LogString.c_str());
+        logMessage1(LOGLEVEL_DEBUG,_T("%s\n"),LogString.c_str());
 								if (m_fLog)
 								{
 												fprintf(m_fLog,"%s\n",LogString.c_str());
